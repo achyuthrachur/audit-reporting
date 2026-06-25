@@ -13,7 +13,7 @@ export function ReasoningEntry({ id, entry }: { id: string; entry: Entry }) {
   const ref = useRef<HTMLDivElement>(null);
   const [flash, setFlash] = useState(false);
 
-  // Deep-link target: â— Reasoned chip â†’ scroll here + flash amber 1.5s.
+  // Deep-link target: Reasoned chip -> scroll here + flash amber 1.5s.
   useEffect(() => {
     if (highlightedLogId === id) {
       setOpen(true);
@@ -28,7 +28,7 @@ export function ReasoningEntry({ id, entry }: { id: string; entry: Entry }) {
   }, [highlightedLogId, id, setHighlightedLogId]);
 
   const durationLabel =
-    entry.durationMs > 0 ? `${(entry.durationMs / 1000).toFixed(1)}s` : "â€”";
+    entry.durationMs > 0 ? `${(entry.durationMs / 1000).toFixed(1)}s` : "-";
 
   return (
     <div
@@ -53,7 +53,7 @@ export function ReasoningEntry({ id, entry }: { id: string; entry: Entry }) {
           )}
         />
         <span className="flex-1 truncate text-[12px] font-semibold text-white/85">
-          {entry.kind === "edit" ? "Edit â€” " : ""}
+          {entry.kind === "edit" ? "Edit - " : ""}
           {entry.stepLabel}
         </span>
         {entry.isStreaming ? (
@@ -68,24 +68,24 @@ export function ReasoningEntry({ id, entry }: { id: string; entry: Entry }) {
       {open && (
         <div className="space-y-1.5 px-3 pb-3 pt-0.5 text-[11px] text-white/70">
           <Meta label="Model" value={model} />
-          <Meta label="Called" value={entry.calledAt || "â€”"} />
+          <Meta label="Called" value={entry.calledAt || "-"} />
           <Meta label="Duration" value={durationLabel} />
           <Meta
             label="Tokens in"
-            value={entry.tokensIn ? entry.tokensIn.toLocaleString() : "â€”"}
+            value={entry.tokensIn ? entry.tokensIn.toLocaleString() : "-"}
           />
           <Meta
             label="Tokens out"
-            value={entry.tokensOut ? entry.tokensOut.toLocaleString() : "â€”"}
+            value={entry.tokensOut ? entry.tokensOut.toLocaleString() : "-"}
           />
           {entry.sources.length > 0 && (
-            <Meta label="Sources" value={entry.sources.join(" Â· ")} />
+            <Meta label="Sources" value={entry.sources.join(" | ")} />
           )}
           {entry.instruction && (
             <div className="flex gap-2">
               <span className="w-[68px] shrink-0 text-white/40">Instruction</span>
               <span className="flex-1 italic text-white/55">
-                â€œ{entry.instruction}â€
+                "{entry.instruction}"
               </span>
             </div>
           )}
@@ -95,7 +95,7 @@ export function ReasoningEntry({ id, entry }: { id: string; entry: Entry }) {
               Reasoning
             </div>
             <div className="whitespace-pre-wrap rounded-lg bg-white/5 p-3 font-mono text-[12px] leading-relaxed text-white/70">
-              {entry.reasoning || (entry.isStreaming ? "â€¦" : "(no reasoning trace returned)")}
+              {entry.reasoning || (entry.isStreaming ? "..." : "(no reasoning trace returned)")}
             </div>
           </div>
         </div>

@@ -15,13 +15,13 @@ const ROLE_CARDS: {
   {
     role: "director",
     title: "Log in as Audit Director",
-    desc: "Review reports · Approve",
+    desc: "Review reports | Approve",
     Icon: ShieldCheck,
   },
   {
     role: "manager",
     title: "Log in as Audit Manager",
-    desc: "Build knowledge base · Draft reports",
+    desc: "Build knowledge base | Draft reports",
     Icon: FileEdit,
   },
 ];
@@ -51,12 +51,12 @@ export default function LoginPage() {
           <span className="h-6 w-px bg-indigo-dark/15" />
           <span className="flex items-center gap-1.5 font-display text-lg font-bold tracking-tight text-indigo-dark">
             <Compass className="h-5 w-5 text-amber" />
-            Compass<span className="text-amber">â„¢</span>
+            Compass<span className="text-amber"></span>
           </span>
         </div>
 
         <p className="mb-1 text-sm font-medium text-gray-text">
-          Meridian National Bank · Internal Audit
+          Meridian National Bank | Internal Audit
         </p>
         <h1 className="font-display text-2xl font-bold text-indigo-dark">
           Sign in
@@ -108,7 +108,7 @@ export default function LoginPage() {
         </div>
 
         <p className="mt-7 text-center text-[11px] text-gray-text">
-          All data is synthetic · Demo build · © 2026 Crowe LLP
+          All data is synthetic | Demo build | (c) 2026 Crowe LLP
         </p>
       </motion.div>
     </main>

@@ -12,7 +12,7 @@ export function DocumentViewer({ doc }: { doc: KbDocument }) {
         <div className="flex items-start justify-between gap-4 rounded-t-lg border-b-2 border-indigo-dark/10 bg-canvas/60 px-9 py-5">
           <div>
             <div className="text-[11px] font-bold uppercase tracking-wider text-amber">
-              Meridian National Bank Â· Internal Audit
+              Meridian National Bank | Internal Audit
             </div>
             <div className="mt-1 font-display text-[15px] font-bold leading-tight text-indigo-dark">
               {doc.title}
@@ -35,7 +35,7 @@ export function DocumentViewer({ doc }: { doc: KbDocument }) {
         </div>
 
         <div className="border-t border-indigo-dark/[0.06] px-9 py-4 text-[10px] text-gray-text">
-          {doc.id} Â· {doc.classification} Â· Synthetic demo document Â· Â© 2026
+          {doc.id} | {doc.classification} | Synthetic demo document | (c) 2026
           Crowe LLP
         </div>
       </article>

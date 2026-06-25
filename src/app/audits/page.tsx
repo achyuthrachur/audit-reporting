@@ -13,7 +13,7 @@ export default function AuditsPage() {
             FY2026 Audit Universe
           </h1>
           <p className="mt-1 text-sm text-gray-text">
-            Annual reporting cycle · 9 auditable entities
+            Annual reporting cycle | 9 auditable entities
           </p>
         </div>
         <AuditUniverseTable />

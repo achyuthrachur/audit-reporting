@@ -4,9 +4,9 @@
  * localStorage persistence for the Capital Planning audit report (no backend).
  *
  * Keys:
- *   crowe-compass:report:capital-planning               â†’ full report state JSON
- *   crowe-compass:report:capital-planning:return-notes  â†’ director return notes
- *   crowe-compass-reporting:role                                â†’ last signed-in role
+ *   crowe-compass:report:capital-planning               -> full report state JSON
+ *   crowe-compass:report:capital-planning:return-notes  -> director return notes
+ *   crowe-compass-reporting:role                                -> last signed-in role
  */
 
 export type ReportStatus = "draft" | "submitted" | "approved" | "returned";

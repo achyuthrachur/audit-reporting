@@ -6,7 +6,7 @@ import { useAppStore } from "@/store/appStore";
 import { patchReport, saveReturnNotes, clearReturnNotes } from "@/lib/persistence";
 
 function fmt(ts: string | null): string {
-  if (!ts) return "â€”";
+  if (!ts) return "-";
   try {
     return new Date(ts).toLocaleString("en-US", {
       month: "short",

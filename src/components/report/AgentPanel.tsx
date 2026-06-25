@@ -36,9 +36,9 @@ export function AgentPanel({
           </span>
         </div>
         <p className="mt-1.5 text-[11px] text-white/50">
-          {status === "idle" && "Ready to generate Â· 7 sections Â· 8 sources"}
+          {status === "idle" && "Ready to generate | 7 sections | 8 sources"}
           {status === "running" &&
-            `Generating section ${Math.min(completed + 1, 7)} of 7â€¦`}
+            `Generating section ${Math.min(completed + 1, 7)} of 7...`}
           {status === "complete" && "Report generation complete"}
           {status === "error" && "Generation error"}
         </p>
@@ -56,7 +56,7 @@ export function AgentPanel({
         ))}
       </div>
 
-      {/* Live reasoning preview â€” below the step list (Section 2.6) */}
+      {/* Live reasoning preview - below the step list (Section 2.6) */}
       <ReasoningLivePreview />
 
       {/* Footer telemetry */}

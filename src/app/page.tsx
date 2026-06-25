@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 
-// â”€â”€â”€ Pipeline stages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Pipeline stages ----------------------------------------------------------
 
 const PIPELINE_STAGES = [
   { label: 'Ingest', color: '#0075C9' },
@@ -14,32 +14,32 @@ const PIPELINE_STAGES = [
   { label: 'Approve', color: '#05AB8C' },
 ];
 
-// â”€â”€â”€ How it works steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- How it works steps -------------------------------------------------------
 
 const STEPS = [
   {
-    num: '01 â€” Ingestion',
+    num: '01 - Ingestion',
     accentColor: '#0075C9',
     title: 'Knowledge base loads regulatory and historical context',
-    desc: 'Eight synthetic documents â€” financial statements, prior audit findings, regulatory guidance, and capital reports â€” are indexed and made available to every agent step.',
+    desc: 'Eight synthetic documents - financial statements, prior audit findings, regulatory guidance, and capital reports - are indexed and made available to every agent step.',
     badgeBg: '#E6F1FB', badgeColor: '#0050AD', badge: 'Document layer',
   },
   {
-    num: '02 â€” Generation',
+    num: '02 - Generation',
     accentColor: '#F5A800',
-    title: 'Seven gptâ€‘5.5 agent calls build the report sequentially',
-    desc: 'Risk profile, material accounts, prior period, regulatory compliance, resources, continuous auditing model, and hours allocation â€” each produced with live reasoning traces.',
-    badgeBg: '#FFF5D6', badgeColor: '#D7761D', badge: 'AI agent Ã—7',
+    title: 'Seven gpt-5.5 agent calls build the report sequentially',
+    desc: 'Risk profile, material accounts, prior period, regulatory compliance, resources, continuous auditing model, and hours allocation - each produced with live reasoning traces.',
+    badgeBg: '#FFF5D6', badgeColor: '#D7761D', badge: 'AI agent x7',
   },
   {
-    num: '03 â€” Review',
+    num: '03 - Review',
     accentColor: '#8B5CF6',
     title: 'Section-level chat lets managers refine every paragraph',
-    desc: 'Ask questions or request rewrites in plain language. A deterministic intent classifier routes each message â€” explanations stay as answers, edits rewrite the section.',
+    desc: 'Ask questions or request rewrites in plain language. A deterministic intent classifier routes each message - explanations stay as answers, edits rewrite the section.',
     badgeBg: '#F3E8FF', badgeColor: '#612080', badge: 'Human in the loop',
   },
   {
-    num: '04 â€” Approval',
+    num: '04 - Approval',
     accentColor: '#05AB8C',
     title: 'Director approves or returns with structured notes',
     desc: 'The manager submits for review. The audit director can approve cleanly or return with required notes. Returned reports unlock for revision; approved reports lock for export.',
@@ -47,7 +47,7 @@ const STEPS = [
   },
 ];
 
-// â”€â”€â”€ Feature cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Feature cards ------------------------------------------------------------
 
 const FEATURES = [
   {
@@ -59,7 +59,7 @@ const FEATURES = [
       </svg>
     ),
     title: 'Agent Transparency',
-    desc: 'Every agent step exposes its reasoning chain in real time. Watch the model think â€” weighted risk assessments, materiality thresholds, regulatory citations â€” before it commits to text.',
+    desc: 'Every agent step exposes its reasoning chain in real time. Watch the model think - weighted risk assessments, materiality thresholds, regulatory citations - before it commits to text.',
     chip: 'Live reasoning trace',
     chipBg: 'rgba(245,168,0,0.12)',
     chipColor: '#F5A800',
@@ -74,7 +74,7 @@ const FEATURES = [
       </svg>
     ),
     title: 'Conversational Report Editor',
-    desc: 'Section-level threads let you revise in natural language. Explain Section 3 gets an answer. Tighten the finding language rewrites the section. No ambiguity â€” intent is classified deterministically.',
+    desc: 'Section-level threads let you revise in natural language. Explain Section 3 gets an answer. Tighten the finding language rewrites the section. No ambiguity - intent is classified deterministically.',
     chip: 'Edit or Q&A per section',
     chipBg: 'rgba(139,92,246,0.12)',
     chipColor: '#A78BFA',
@@ -87,14 +87,14 @@ const FEATURES = [
       </svg>
     ),
     title: 'Role-Based Approval Flow',
-    desc: 'Managers generate and submit; directors review and decide. Approve locks the report for export. Return with notes unlocks it with required revisions attached â€” all persisted in localStorage.',
-    chip: 'Manager â†’ Director gate',
+    desc: 'Managers generate and submit; directors review and decide. Approve locks the report for export. Return with notes unlocks it with required revisions attached - all persisted in localStorage.',
+    chip: 'Manager -> Director gate',
     chipBg: 'rgba(5,171,140,0.12)',
     chipColor: '#05AB8C',
   },
 ];
 
-// â”€â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Stats --------------------------------------------------------------------
 
 const STATS = [
   { value: '7', label: 'Agent steps' },
@@ -103,7 +103,7 @@ const STATS = [
   { value: 'Full', label: 'Reasoning trace' },
 ];
 
-// â”€â”€â”€ Page-level CSS animations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Page-level CSS animations ------------------------------------------------
 
 const PAGE_CSS = `
 @keyframes glow-pulse {
@@ -154,7 +154,7 @@ const PAGE_CSS = `
 }
 `;
 
-// â”€â”€â”€ Gradient orbs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Gradient orbs ------------------------------------------------------------
 
 function GradientOrbs() {
   return (
@@ -191,7 +191,7 @@ function GradientOrbs() {
   );
 }
 
-// â”€â”€â”€ Dot grid background â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Dot grid background ------------------------------------------------------
 
 function DotGrid() {
   return (
@@ -207,7 +207,7 @@ function DotGrid() {
   );
 }
 
-// â”€â”€â”€ Scanning line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Scanning line ------------------------------------------------------------
 
 function ScanLine() {
   return (
@@ -222,7 +222,7 @@ function ScanLine() {
   );
 }
 
-// â”€â”€â”€ Animated stat counter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Animated stat counter ----------------------------------------------------
 
 function AnimatedStat({ value, label }: { value: string; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -257,7 +257,7 @@ function AnimatedStat({ value, label }: { value: string; label: string }) {
   );
 }
 
-// â”€â”€â”€ Pipeline preview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Pipeline preview ---------------------------------------------------------
 
 function PipelinePreview() {
   return (
@@ -319,7 +319,7 @@ function PipelinePreview() {
   );
 }
 
-// â”€â”€â”€ Feature card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Feature card -------------------------------------------------------------
 
 function FeatureCard({ icon, title, desc, chip, chipBg, chipColor, delay }: {
   icon: ReactNode;
@@ -365,7 +365,7 @@ function FeatureCard({ icon, title, desc, chip, chipBg, chipColor, delay }: {
   );
 }
 
-// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// --- Page ---------------------------------------------------------------------
 
 export default function LandingPage() {
   const { scrollY } = useScroll();
@@ -384,9 +384,9 @@ export default function LandingPage() {
     <div style={{ fontFamily: 'var(--font-sans)', color: '#333333' }}>
       <style dangerouslySetInnerHTML={{ __html: PAGE_CSS }} />
 
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+      {/* =======================================================
           TOP NAV
-      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      ======================================================= */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         height: 60,
@@ -400,7 +400,7 @@ export default function LandingPage() {
           <Image src="/crowe-logo-white.svg" alt="Crowe" height={18} width={66} />
           <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 18, lineHeight: 1, userSelect: 'none' }}>|</span>
           <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: 13, fontWeight: 600, letterSpacing: '0.04em', fontFamily: 'var(--font-display)' }}>
-            Compassâ„¢
+            Compass
           </span>
         </div>
         <Link href="/login">
@@ -416,9 +416,9 @@ export default function LandingPage() {
         </Link>
       </nav>
 
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          SECTION 1 â€” HERO
-      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* =======================================================
+          SECTION 1 - HERO
+      ======================================================= */}
       <section style={{
         position: 'relative',
         paddingTop: 60,
@@ -481,7 +481,7 @@ export default function LandingPage() {
               }}>
                 Compass
               </span>
-              <span style={{ color: 'rgba(245,168,0,0.7)', fontSize: 48, verticalAlign: 'super', marginLeft: 2 }}>â„¢</span>
+              <span style={{ color: 'rgba(245,168,0,0.7)', fontSize: 48, verticalAlign: 'super', marginLeft: 2 }}></span>
             </motion.h1>
           </motion.div>
 
@@ -536,7 +536,7 @@ export default function LandingPage() {
                     background: '#011E41', color: '#F5A800',
                     width: 26, height: 26, borderRadius: '50%',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13,
-                  }}>â†’</span>
+                  }}>{"->"}</span>
                 </button>
               </Link>
               <a href="#how-it-works" style={{ textDecoration: 'none' }}>
@@ -547,7 +547,7 @@ export default function LandingPage() {
                   letterSpacing: '0.04em', textTransform: 'uppercase',
                   border: '1.5px solid rgba(255,255,255,0.18)', borderRadius: 4, cursor: 'pointer',
                 }}>
-                  How it works â†“
+                  How it works
                 </button>
               </a>
             </motion.div>
@@ -600,9 +600,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          SECTION 2 â€” HOW IT WORKS
-      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* =======================================================
+          SECTION 2 - HOW IT WORKS
+      ======================================================= */}
       <section id="how-it-works" style={{ background: '#FFFFFF', borderTop: '1px solid #E0E0E0' }}>
         <div ref={howRef} style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 48px' }}>
 
@@ -628,7 +628,7 @@ export default function LandingPage() {
             transition={{ duration: 0.5, delay: 0.16 }}
             style={{ fontSize: 16, color: '#4F4F4F', marginBottom: 52, maxWidth: 560 }}
           >
-            Every stage uses the right kind of intelligence â€” grounded KB retrieval, sequential AI generation, human refinement, and governance-gated approval.
+            Every stage uses the right kind of intelligence - grounded KB retrieval, sequential AI generation, human refinement, and governance-gated approval.
           </motion.p>
 
           <div style={{
@@ -673,9 +673,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          SECTION 3 â€” FEATURES
-      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* =======================================================
+          SECTION 3 - FEATURES
+      ======================================================= */}
       <section style={{ background: '#011E41', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 48px' }}>
 
@@ -702,7 +702,7 @@ export default function LandingPage() {
               transition={{ duration: 0.5, delay: 0.16 }}
               style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 52, maxWidth: 540 }}
             >
-              Transparency, editability, and governance built in â€” not bolted on.
+              Transparency, editability, and governance built in - not bolted on.
             </motion.p>
           </div>
 
@@ -744,16 +744,16 @@ export default function LandingPage() {
                 border: 'none', borderRadius: 4, cursor: 'pointer',
                 whiteSpace: 'nowrap',
               }}>
-                Start the demo â†’
+                Start the demo {"->"}
               </button>
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+      {/* =======================================================
           FOOTER
-      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      ======================================================= */}
       <footer style={{
         background: '#010F22', padding: '24px 48px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -763,11 +763,11 @@ export default function LandingPage() {
           <Image src="/crowe-logo-white.svg" alt="Crowe" height={18} width={66} />
           <span style={{ color: 'rgba(255,255,255,0.18)' }}>|</span>
           <span style={{ color: 'rgba(255,255,255,0.38)', fontSize: 13, fontFamily: 'ui-monospace, SFMono-Regular, monospace' }}>
-            AI Innovation Team Â· Crowe Compassâ„¢ Â· 2026
+            AI Innovation Team | Crowe Compass | 2026
           </span>
         </div>
         <div style={{ color: 'rgba(255,255,255,0.22)', fontSize: 12, fontFamily: 'ui-monospace, SFMono-Regular, monospace' }}>
-          Confidential â€” not for distribution
+          Confidential - not for distribution
         </div>
       </footer>
     </div>

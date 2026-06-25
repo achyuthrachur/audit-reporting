@@ -52,7 +52,7 @@ export function DocumentCard({
           {doc.title}
         </span>
         <span className="mt-0.5 block text-[11px] text-gray-text">
-          {doc.docType} Â· {doc.date} Â· {doc.pages}pp
+          {doc.docType} | {doc.date} | {doc.pages}pp
         </span>
         <span className="mt-1.5 block">
           {phase === "indexed" && (
@@ -62,12 +62,12 @@ export function DocumentCard({
           )}
           {phase === "parsing" && (
             <span className="text-[10px] font-semibold text-amber">
-              Parsingâ€¦
+              Parsing...
             </span>
           )}
           {phase === "extracting" && (
             <span className="text-[10px] font-semibold text-blue">
-              Extractingâ€¦
+              Extracting...
             </span>
           )}
         </span>

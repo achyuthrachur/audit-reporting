@@ -4,7 +4,7 @@ import { Sparkles } from "lucide-react";
 import { useAppStore } from "@/store/appStore";
 
 /**
- * â— Reasoned chip on assistant bubbles (Section 4). Clicking opens the
+ * Reasoned Reasoned chip on assistant bubbles (Section 4). Clicking opens the
  * reasoning log and deep-links to this call's entry (smooth scroll + flash).
  */
 export function ReasonedChip({ logId }: { logId: string }) {

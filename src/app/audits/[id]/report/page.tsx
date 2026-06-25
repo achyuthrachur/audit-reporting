@@ -218,7 +218,7 @@ export default function ReportPage() {
           startTelemetry(evt.id);
           // Open a reasoning-log entry for this generation step.
           const entry: ReasoningEntry = {
-            stepLabel: `Step ${evt.id} â€” ${evt.title}`,
+            stepLabel: `Step ${evt.id} - ${evt.title}`,
             calledAt: nowLabel(),
             durationMs: 0,
             tokensIn: 0,
@@ -427,7 +427,7 @@ export default function ReportPage() {
               });
               break;
             case "section_delta":
-              // First edit token â†’ clear the section, then stream in place.
+              // First edit token -> clear the section, then stream in place.
               if (!clearedForEdit) {
                 clearedForEdit = true;
                 setSectionContent(numId, "");
@@ -478,11 +478,11 @@ export default function ReportPage() {
         addChatMessage(sectionId, {
           role: "assistant",
           content:
-            "âš ï¸ That didn't complete â€” the request couldn't reach the server. Please try again.",
+            "Warning: That didn't complete - the request couldn't reach the server. Please try again.",
         });
-        store.showToast("Request failed â€” please retry", "error");
+        store.showToast("Request failed - please retry", "error");
       } else if (isAnswer) {
-        // Question / info request â€” show the answer, leave the section as-is.
+        // Question / info request - show the answer, leave the section as-is.
         addChatMessage(sectionId, {
           role: "assistant",
           content: answerText || "(no answer returned)",
@@ -504,11 +504,11 @@ export default function ReportPage() {
 
   // ---- role / lifecycle derived view state ----
   // Generation is a MANAGER capability. Anyone who is not explicitly a manager
-  // (director, or not-yet-hydrated/unknown) gets the read-only reviewer view â€”
+  // (director, or not-yet-hydrated/unknown) gets the read-only reviewer view -
   // this also closes the role-hydration race where the Run button could flash.
   const role = store.role;
   const isManager = role === "manager";
-  const isReviewer = !isManager; // director or unknown â†’ review / read-only
+  const isReviewer = !isManager; // director or unknown -> review / read-only
   const reportStatus = store.reportStatus;
   const returnNotes = store.returnNotes;
   const reportExists = isComplete;
@@ -520,18 +520,18 @@ export default function ReportPage() {
     if (!isComplete) return null;
     if (isReviewer) {
       if (reportStatus === "submitted")
-        return { variant: "amber", text: "Submitted for Review â€” read-only" };
+        return { variant: "amber", text: "Submitted for Review - read-only" };
       if (reportStatus === "approved") return { variant: "teal", text: "Approved" };
       if (reportStatus === "returned")
-        return { variant: "red", text: "Returned to manager â€” Needs Revision" };
-      return { variant: "neutral", text: "Draft â€” Not Submitted" };
+        return { variant: "red", text: "Returned to manager - Needs Revision" };
+      return { variant: "neutral", text: "Draft - Not Submitted" };
     }
     if (reportStatus === "returned")
       return { variant: "red", text: "Returned for Revision" };
     if (reportStatus === "submitted")
       return { variant: "amber", text: "Submitted for Review" };
     if (reportStatus === "approved") return { variant: "teal", text: "Approved" };
-    return null; // manager draft â†’ default completion banner
+    return null; // manager draft -> default completion banner
   })();
 
   const directorNotes =
@@ -572,7 +572,7 @@ export default function ReportPage() {
     <div className="flex h-screen flex-col bg-canvas">
       <TopNav current={isComplete ? 4 : 3} />
       <div className="flex min-h-0 flex-1">
-        {/* Left column â€” active panel + persistent reasoning log */}
+        {/* Left column - active panel + persistent reasoning log */}
         <div className="no-print flex w-96 shrink-0 flex-col bg-indigo-dark">
           <div className="min-h-0 flex-1 overflow-hidden">
             <AnimatePresence mode="wait">{renderLeftPanel()}</AnimatePresence>

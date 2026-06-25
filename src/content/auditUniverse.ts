@@ -27,7 +27,7 @@ export const AUDIT_UNIVERSE: AuditEntity[] = [
   },
   {
     id: "commercial-lending",
-    name: "Commercial Lending â€” Credit Administration",
+    name: "Commercial Lending - Credit Administration",
     unit: "Commercial Bank",
     inherentRisk: "High",
     lastAudit: "Q3 2024",
@@ -93,7 +93,7 @@ export const AUDIT_UNIVERSE: AuditEntity[] = [
   },
   {
     id: "information-security",
-    name: "Information Security â€” Cyber Resilience",
+    name: "Information Security - Cyber Resilience",
     unit: "Technology",
     inherentRisk: "High",
     lastAudit: "Q2 2024",

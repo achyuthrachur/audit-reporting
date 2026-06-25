@@ -46,7 +46,7 @@ export function TopNav({ current }: { current: number }) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-indigo-dark text-white">
       <div className="flex h-14 items-center gap-4 px-5">
-        {/* Brand â€” clicks back to login to change role */}
+        {/* Brand - clicks back to login to change role */}
         <button
           type="button"
           onClick={goToLogin}
@@ -58,13 +58,13 @@ export function TopNav({ current }: { current: number }) {
           <span className="h-5 w-px bg-white/25" />
           <span className="flex items-center gap-1.5 font-display text-[15px] font-bold tracking-tight">
             <Compass className="h-4 w-4 text-amber" />
-            Compass<span className="text-amber">â„¢</span>
+            Compass<span className="text-amber"></span>
           </span>
         </button>
 
         <span className="hidden h-5 w-px bg-white/15 lg:block" />
         <span className="hidden text-xs font-medium text-white/55 lg:block">
-          Meridian National Bank Â· Internal Audit
+          Meridian National Bank | Internal Audit
         </span>
 
         {/* Stepper */}
@@ -85,7 +85,7 @@ export function TopNav({ current }: { current: number }) {
             Start over
           </button>
 
-          {/* Role avatar â€” clicks back to login */}
+          {/* Role avatar - clicks back to login */}
           <button
             type="button"
             onClick={goToLogin}

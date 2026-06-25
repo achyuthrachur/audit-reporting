@@ -86,7 +86,7 @@ export function ReportSection({
           className="no-print mb-2 flex w-full items-center gap-2 rounded-lg border border-amber/40 bg-amber/10 px-3 py-2 text-left text-[12px] font-semibold text-[#9a6a00]"
         >
           <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
-          <span className="flex-1">Heads up â€” {coherenceWarning}</span>
+          <span className="flex-1">Heads up - {coherenceWarning}</span>
           <span className="text-[11px] underline">Review</span>
         </button>
       )}

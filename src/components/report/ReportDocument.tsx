@@ -72,13 +72,13 @@ export function ReportDocument({
             Meridian National Bank - Internal Audit
           </div>
           <h1 className="mt-1 font-display text-xl font-bold leading-tight text-indigo-dark">
-            FY2026 Audit Report · Capital Planning &amp; Capital Adequacy
+            FY2026 Audit Report | Capital Planning &amp; Capital Adequacy
           </h1>
           <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-text">
             <span className="font-mono font-semibold text-indigo-mid">
               IA-RPT-2026-014
             </span>
-            <span>Â·</span>
+            <span>|</span>
             <span className="font-semibold text-[#9a6a00]">
               Draft - Pending Approval
             </span>
@@ -114,7 +114,7 @@ export function ReportDocument({
         {status === "complete" && !statusBanner && (
           <div className="mx-9 mt-6 flex items-center gap-2 rounded-lg border border-success/25 bg-success/[0.07] px-4 py-2.5 text-[13px] font-semibold text-success">
             <CheckCircle2 className="h-4 w-4" />
-            Report generated from 8 source documents · 7 sections · {elapsed}s
+            Report generated from 8 source documents | 7 sections | {elapsed}s
             {ranAsFallback && (
               <span className="ml-auto text-[10px] font-normal uppercase tracking-wide text-gray-text">
                 demo safe-mode
@@ -156,8 +156,8 @@ export function ReportDocument({
         </div>
 
         <div className="border-t border-indigo-dark/[0.06] px-9 py-4 text-[10px] text-gray-text">
-          IA-RPT-2026-014 · Internal Use Only · Draft - Pending Approval Â·
-          Synthetic demo · Â© 2026 Crowe LLP
+          IA-RPT-2026-014 | Internal Use Only | Draft - Pending Approval |
+          Synthetic demo | (c) 2026 Crowe LLP
         </div>
       </article>
     </div>

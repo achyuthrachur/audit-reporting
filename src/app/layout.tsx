@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/Toaster";
 
 export const metadata: Metadata = {
-  title: "Crowe Compassâ„¢ â€” Audit Reporting Agent",
+  title: "Crowe Compass - Audit Reporting Agent",
   description:
     "Report clearly. Audit continuously. - Crowe Compass AI Audit Reporting Agent for Meridian National Bank.",
 };

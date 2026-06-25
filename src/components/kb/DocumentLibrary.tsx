@@ -38,7 +38,7 @@ export function DocumentLibrary({
             className={`h-1.5 w-1.5 rounded-full ${indexing ? "bg-amber animate-pulse" : "bg-success"}`}
           />
           <span className={indexing ? "text-amber" : "text-success"}>
-            {indexing ? `Indexing ${indexedCount}/${docs.length}â€¦` : "Indexed"}
+            {indexing ? `Indexing ${indexedCount}/${docs.length}...` : "Indexed"}
           </span>
         </div>
         {/* Progress bar */}

@@ -161,7 +161,7 @@ body {
 }
 
 /* ===========================================================
-   Print stylesheet â€” Export PDF via window.print()
+   Print stylesheet - Export PDF via window.print()
    =========================================================== */
 @media print {
   body {

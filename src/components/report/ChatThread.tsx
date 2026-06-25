@@ -73,7 +73,7 @@ export function ChatThread({
       {isEditing && (
         <div className="flex items-center gap-2 px-1 text-[12px] text-amber/80">
           <Loader2 className="h-3.5 w-3.5 animate-spin" />
-          Thinkingâ€¦
+          Thinking...
         </div>
       )}
 

@@ -240,7 +240,7 @@ export async function POST(req: NextRequest) {
       alignment: AlignmentType.LEFT,
       children: [
         new TextRun({
-          text: "MERIDIAN NATIONAL BANK â€” INTERNAL AUDIT",
+          text: "MERIDIAN NATIONAL BANK - INTERNAL AUDIT",
           bold: true,
           size: 18,
           color: AMBER,
@@ -251,7 +251,7 @@ export async function POST(req: NextRequest) {
       spacing: { after: 40 },
       children: [
         new TextRun({
-          text: "FY2026 Audit Report â€” Capital Planning & Capital Adequacy",
+          text: "FY2026 Audit Report - Capital Planning & Capital Adequacy",
           bold: true,
           size: 36,
           color: INDIGO,
@@ -262,7 +262,7 @@ export async function POST(req: NextRequest) {
       spacing: { after: 240 },
       children: [
         new TextRun({
-          text: "IA-RPT-2026-014 Â· Draft â€” Pending Approval Â· Internal Use Only",
+          text: "IA-RPT-2026-014 | Draft - Pending Approval | Internal Use Only",
           size: 18,
           color: "828282",
         }),

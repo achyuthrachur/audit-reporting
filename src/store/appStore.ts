@@ -17,7 +17,7 @@ export interface ReportSectionState {
   content: string;
 }
 
-// ===================== Phase 2 â€” Agent Transparency =====================
+// ===================== Phase 2 - Agent Transparency =====================
 
 export interface ReasoningEntry {
   stepLabel: string;
@@ -27,7 +27,7 @@ export interface ReasoningEntry {
   tokensOut: number;
   sources: string[];
   instruction: string;
-  reasoning: string; // full REASONING_STARTâ€¦REASONING_END content
+  reasoning: string; // full REASONING_START...REASONING_END content
   isStreaming: boolean;
   /** discriminates generation steps from chat edits in the log UI */
   kind: "generation" | "edit";

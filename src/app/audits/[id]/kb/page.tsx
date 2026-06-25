@@ -43,7 +43,7 @@ export default function KbPage() {
   const [progress, setProgress] = useState(kbLoaded ? 100 : 0);
   const ran = useRef(false);
 
-  // First-visit ingestion theater (~8s): each doc cycles parsingâ†’extractingâ†’indexed
+  // First-visit ingestion theater (~8s): each doc cycles parsing->extracting->indexed
   useEffect(() => {
     if (kbLoaded || ran.current) return;
     ran.current = true;

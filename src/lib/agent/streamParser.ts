@@ -1,13 +1,13 @@
 /**
- * streamParser.ts â€” the most important file in Phase 2.
+ * streamParser.ts - the most important file in Phase 2.
  *
  * Incrementally parses a model's streamed output and routes tokens to the
  * correct destination based on three markers:
  *
- *   REASONING_START ... REASONING_END   â†’ reasoning trace (shown in the log,
+ *   REASONING_START ... REASONING_END   -> reasoning trace (shown in the log,
  *                                          NEVER in the report document)
- *   <section content>                   â†’ the report section markdown
- *   SUMMARY: <one line>                 â†’ edit summary (edit route only)
+ *   <section content>                   -> the report section markdown
+ *   SUMMARY: <one line>                 -> edit summary (edit route only)
  *
  * The parser is transport-agnostic: it emits `ParsedToken`s. The API routes
  * map those to SSE events. This separation is what makes the routing logic
@@ -16,7 +16,7 @@
  * Correctness requirements (all covered by streamParser.test.ts):
  *  - Markers may be split across chunk boundaries (e.g. "REASON" + "ING_END").
  *  - A marker's characters must never bleed into either output stream.
- *  - The model may omit the REASONING block entirely â†’ all output is section
+ *  - The model may omit the REASONING block entirely -> all output is section
  *    content, emitted from the first token.
  *  - SUMMARY: detection is opt-in (edit route) so a generated section that
  *    happens to contain the word is never mis-split.
@@ -95,7 +95,7 @@ export class StreamParser {
           this.mode = "section";
           continue;
         }
-        return; // notfound â€” wait for more (or flushed if isEnd)
+        return; // notfound - wait for more (or flushed if isEnd)
       }
 
       if (this.mode === "section") {
@@ -146,11 +146,11 @@ export class StreamParser {
     }
 
     if (!isEnd && REASONING_START.startsWith(rest)) {
-      // `rest` is still a viable prefix of the marker â€” wait for more.
+      // `rest` is still a viable prefix of the marker - wait for more.
       return false;
     }
 
-    // The opening diverges from REASONING_START â†’ there is no reasoning block.
+    // The opening diverges from REASONING_START -> there is no reasoning block.
     // Treat the entire buffer (including any leading whitespace) as section.
     this.mode = "section";
     return true;

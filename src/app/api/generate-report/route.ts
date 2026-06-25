@@ -13,7 +13,7 @@ export const maxDuration = 300;
 
 const MODEL = process.env.OPENAI_MODEL || "gpt-5.5";
 const PER_CALL_TIMEOUT_MS = 30_000;
-const TELEMETRY_LINE_MS = 700; // scripted "Readingâ€¦" pacing before the call
+const TELEMETRY_LINE_MS = 700; // scripted "Reading..." pacing before the call
 const FALLBACK_TOKEN_MS = 18; // simulated streaming cadence in fallback mode
 
 /**
@@ -218,7 +218,7 @@ export async function POST(req: NextRequest) {
           ranAsFallback,
         });
         console.log(
-          `[generate-report] complete in ${elapsedSeconds}s Â· mode=${reason} Â· ranAsFallback=${ranAsFallback}`
+          `[generate-report] complete in ${elapsedSeconds}s | mode=${reason} | ranAsFallback=${ranAsFallback}`
         );
       } catch (err) {
         console.error("[generate-report] fatal error:", err);
@@ -250,7 +250,7 @@ function tokenize(s: string): string[] {
 
 /**
  * Fallback path for a generation step: stream the pre-baked reasoning trace
- * (reasoning_delta â†’ reasoning_complete), then the pre-baked section content
+ * (reasoning_delta -> reasoning_complete), then the pre-baked section content
  * (section_delta), through the SAME SSE machinery as a live run.
  */
 async function streamFallback(

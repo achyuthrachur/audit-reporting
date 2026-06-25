@@ -22,10 +22,10 @@ const FB_REASONING_TOKEN_MS = 10;
  * an EDIT (rewrite the section)?
  *
  * Rules, in order:
- *  1. Leading imperative edit verb  â†’ edit
- *  2. Ends with "?"                 â†’ answer
- *  3. Leading question word         â†’ answer
- *  4. Otherwise (ambiguous/comment) â†’ answer  (non-destructive default)
+ *  1. Leading imperative edit verb  -> edit
+ *  2. Ends with "?"                 -> answer
+ *  3. Leading question word         -> answer
+ *  4. Otherwise (ambiguous/comment) -> answer  (non-destructive default)
  */
 const EDIT_VERBS = [
   "make", "add", "remove", "delete", "rewrite", "revise", "reword", "reorder",
@@ -52,14 +52,14 @@ function classifyIntent(userMessage: string): "answer" | "edit" {
   const words = firstSentence.split(/[\s,;:]+/).filter(Boolean);
   const firstWord = words[0] ?? "";
 
-  // If ANY word in the first sentence is an edit verb â†’ edit.
+  // If ANY word in the first sentence is an edit verb -> edit.
   // This catches "Can you make...", "Please add...", "I want you to revise..."
   if (words.some((w) => EDIT_VERBS.includes(w))) return "edit";
 
-  // Ends with "?" â†’ answer
+  // Ends with "?" -> answer
   if (msg.endsWith("?")) return "answer";
 
-  // Starts with a question word â†’ answer
+  // Starts with a question word -> answer
   if (QUESTION_WORDS.includes(firstWord)) return "answer";
 
   return "answer";
@@ -314,7 +314,7 @@ async function streamEditFallback(
   const isKnownEdit = key in EDIT_FALLBACK;
 
   if (!isKnownEdit && classifyIntent(userMessage) === "answer") {
-    // Free-text question in safe-mode â†’ answer conversationally.
+    // Free-text question in safe-mode -> answer conversationally.
     const reasoning = `Instruction interpreted as a question/comment rather than an
 edit. In demo safe-mode the live model is not queried, so I provide a grounded,
 conversational response without modifying the section.`;

@@ -26,7 +26,7 @@ function run(chunks: string[], detectSummary = false) {
 const FULL =
   "REASONING_START\nSources: ERM-2026-CAP. Decision: lead with risk.\nREASONING_END\n## Executive Summary\n\nThe FY2026 audit is a priority.";
 
-test("normal flow â€” reasoning and section routed, markers stripped", () => {
+test("normal flow - reasoning and section routed, markers stripped", () => {
   const r = run([FULL]);
   assert.equal(
     r.reasoning.trim(),
@@ -44,8 +44,8 @@ test("normal flow â€” reasoning and section routed, markers stripped", () =
 });
 
 test("REASONING_START marker split across two chunks", () => {
-  const r = run(["REASON", "ING_START\nthinkingâ€¦\nREASONING_END\n## Body"]);
-  assert.equal(r.reasoning.trim(), "thinkingâ€¦");
+  const r = run(["REASON", "ING_START\nthinking...\nREASONING_END\n## Body"]);
+  assert.equal(r.reasoning.trim(), "thinking...");
   assert.equal(r.section.trim(), "## Body");
   assert.ok(!r.section.includes("REASON"));
 });
@@ -61,7 +61,7 @@ test("REASONING_END marker split across two chunks", () => {
 });
 
 test("marker split character-by-character", () => {
-  const r = run(FULL.split("")); // one char per chunk â€” worst case
+  const r = run(FULL.split("")); // one char per chunk - worst case
   assert.equal(
     r.reasoning.trim(),
     "Sources: ERM-2026-CAP. Decision: lead with risk."
@@ -72,7 +72,7 @@ test("marker split character-by-character", () => {
   );
 });
 
-test("model omits REASONING block entirely â€” all section", () => {
+test("model omits REASONING block entirely - all section", () => {
   const r = run(["## Executive Summary\n\n", "Straight to content."]);
   assert.equal(r.reasoning, "");
   assert.equal(r.section, "## Executive Summary\n\nStraight to content.");
@@ -85,7 +85,7 @@ test("omitted reasoning where opening looks like a partial marker then diverges"
   assert.equal(r.section, "REASONABLE assurance is the goal.");
 });
 
-test("SUMMARY line at end â€” detected (edit mode), stripped from section", () => {
+test("SUMMARY line at end - detected (edit mode), stripped from section", () => {
   const r = run(
     [
       "REASONING_START\nrevise tone\nREASONING_END\n## Executive Summary\n\nRevised text here.\nSUMMARY: Sharpened the risk rationale.",

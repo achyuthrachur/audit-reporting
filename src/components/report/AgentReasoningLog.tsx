@@ -16,7 +16,7 @@ export function AgentReasoningLog() {
   const log = useAppStore((s) => s.reasoningLog);
 
   // Integer-like keys (generation steps 1-7) sort first, then edit keys in
-  // insertion order â€” exactly the order we want in the log.
+  // insertion order - exactly the order we want in the log.
   const ids = Object.keys(log);
   const count = ids.length;
 

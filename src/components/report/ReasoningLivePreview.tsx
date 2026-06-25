@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAppStore } from "@/store/appStore";
 
 /**
- * Live reasoning preview (Section 2.6) â€” shown in the Agent Activity panel
+ * Live reasoning preview (Section 2.6) - shown in the Agent Activity panel
  * while a generation step is actively running. This is "the moment in the
  * demo": the room watches the agent think before it drafts.
  */
