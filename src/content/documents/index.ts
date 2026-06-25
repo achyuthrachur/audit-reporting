@@ -1,3 +1,5 @@
+import { DOCUMENT_EXPANSIONS, DOCUMENT_PAGE_COUNTS } from "./expansions";
+
 /**
  * The 8 synthetic Knowledge Base documents for the FY2026 Capital Planning &
  * Capital Adequacy audit report. All figures reflect Meridian National Bank, a
@@ -302,6 +304,14 @@ Final report distribution should include the Board Risk Committee, Chief Audit E
 The final report is targeted for issuance by **October 31, 2026**.`,
 };
 
+const enrichDocument = (doc: KbDocument): KbDocument => ({
+  ...doc,
+  pages: DOCUMENT_PAGE_COUNTS[doc.id] ?? doc.pages,
+  body: DOCUMENT_EXPANSIONS[doc.id]
+    ? `${doc.body}\n\n${DOCUMENT_EXPANSIONS[doc.id]}`
+    : doc.body,
+});
+
 export const KB_DOCUMENTS: KbDocument[] = [
   DOC_SCOPE,
   DOC_PROGRAM,
@@ -311,7 +321,7 @@ export const KB_DOCUMENTS: KbDocument[] = [
   DOC_VALIDATION,
   DOC_REG,
   DOC_CLOSING,
-];
+].map(enrichDocument);
 
 export const getDocById = (id: string): KbDocument | undefined =>
   KB_DOCUMENTS.find((d) => d.id === id);
