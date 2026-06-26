@@ -1,4 +1,4 @@
-# PRD - Crowe Compass Report Chat Editor
+# PRD - Crowe Helix Report Chat Editor
 
 ## Purpose
 

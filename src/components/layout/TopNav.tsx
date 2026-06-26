@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Compass, RotateCcw } from "lucide-react";
+import { Orbit, RotateCcw } from "lucide-react";
 import { Stepper } from "./Stepper";
 import { useAppStore } from "@/store/appStore";
 import { REPORT_KEY, NOTES_KEY, ROLE_KEY } from "@/lib/persistence";
@@ -57,8 +57,8 @@ export function TopNav({ current }: { current: number }) {
           <img src="/crowe-logo-white.svg" alt="Crowe" className="h-7 w-auto" />
           <span className="h-5 w-px bg-white/25" />
           <span className="flex items-center gap-1.5 font-display text-[15px] font-bold tracking-tight">
-            <Compass className="h-4 w-4 text-amber" />
-            Compass<span className="text-amber"></span>
+            <Orbit className="h-4 w-4 text-amber" />
+            Helix<span className="text-amber"></span>
           </span>
         </button>
 

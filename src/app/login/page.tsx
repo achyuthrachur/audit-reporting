@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ArrowRight, Compass, ShieldCheck, FileEdit } from "lucide-react";
+import { ArrowRight, Orbit, ShieldCheck, FileEdit } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAppStore, type Role } from "@/store/appStore";
 import { saveRole } from "@/lib/persistence";
@@ -50,8 +50,8 @@ export default function LoginPage() {
           <img src="/crowe-logo.svg" alt="Crowe" className="h-7 w-auto" />
           <span className="h-6 w-px bg-indigo-dark/15" />
           <span className="flex items-center gap-1.5 font-display text-lg font-bold tracking-tight text-indigo-dark">
-            <Compass className="h-5 w-5 text-amber" />
-            Compass<span className="text-amber"></span>
+            <Orbit className="h-5 w-5 text-amber" />
+            Helix<span className="text-amber"></span>
           </span>
         </div>
 

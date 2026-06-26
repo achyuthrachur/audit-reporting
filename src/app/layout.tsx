@@ -3,9 +3,9 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/Toaster";
 
 export const metadata: Metadata = {
-  title: "Crowe Compass - Audit Reporting Agent",
+  title: "Crowe Helix - Audit Reporting Agent",
   description:
-    "Report clearly. Audit continuously. - Crowe Compass AI Audit Reporting Agent for Meridian National Bank.",
+    "Report clearly. Audit continuously. - Crowe Helix AI Audit Reporting Agent for Meridian National Bank.",
 };
 
 export default function RootLayout({

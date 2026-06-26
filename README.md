@@ -1,4 +1,4 @@
-# Crowe Compass - AI Audit Reporting Agent
+# Crowe Helix - AI Audit Reporting Agent
 
 > Report clearly. Audit continuously.
 
@@ -23,7 +23,7 @@ Open the URL printed at startup and follow:
 ```env
 OPENAI_API_KEY=
 OPENAI_MODEL=gpt-5.5
-NEXT_PUBLIC_APP_NAME=Crowe Compass
+NEXT_PUBLIC_APP_NAME=Crowe Helix
 DEMO_FALLBACK=false
 ```
 

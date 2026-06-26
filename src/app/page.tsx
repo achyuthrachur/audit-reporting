@@ -400,7 +400,7 @@ export default function LandingPage() {
           <Image src="/crowe-logo-white.svg" alt="Crowe" height={18} width={66} />
           <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 18, lineHeight: 1, userSelect: 'none' }}>|</span>
           <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: 13, fontWeight: 600, letterSpacing: '0.04em', fontFamily: 'var(--font-display)' }}>
-            Compass
+            Helix
           </span>
         </div>
         <Link href="/login">
@@ -479,7 +479,7 @@ export default function LandingPage() {
                 color: '#F5A800',
                 textShadow: '0 0 60px rgba(245,168,0,0.4)',
               }}>
-                Compass
+                Helix
               </span>
               <span style={{ color: 'rgba(245,168,0,0.7)', fontSize: 48, verticalAlign: 'super', marginLeft: 2 }}></span>
             </motion.h1>
@@ -694,7 +694,7 @@ export default function LandingPage() {
               transition={{ duration: 0.5, delay: 0.08 }}
               style={{ fontSize: 36, fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.02em', marginBottom: 8, fontFamily: 'var(--font-display)' }}
             >
-              What makes Compass different
+              What makes Helix different
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -763,7 +763,7 @@ export default function LandingPage() {
           <Image src="/crowe-logo-white.svg" alt="Crowe" height={18} width={66} />
           <span style={{ color: 'rgba(255,255,255,0.18)' }}>|</span>
           <span style={{ color: 'rgba(255,255,255,0.38)', fontSize: 13, fontFamily: 'ui-monospace, SFMono-Regular, monospace' }}>
-            AI Innovation Team | Crowe Compass | 2026
+            AI Innovation Team | Crowe Helix | 2026
           </span>
         </div>
         <div style={{ color: 'rgba(255,255,255,0.22)', fontSize: 12, fontFamily: 'ui-monospace, SFMono-Regular, monospace' }}>

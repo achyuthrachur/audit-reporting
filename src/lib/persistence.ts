@@ -4,9 +4,9 @@
  * localStorage persistence for the Capital Planning audit report (no backend).
  *
  * Keys:
- *   crowe-compass:report:capital-planning               -> full report state JSON
- *   crowe-compass:report:capital-planning:return-notes  -> director return notes
- *   crowe-compass-reporting:role                                -> last signed-in role
+ *   crowe-helix:report:capital-planning               -> full report state JSON
+ *   crowe-helix:report:capital-planning:return-notes  -> director return notes
+ *   crowe-helix-reporting:role                                -> last signed-in role
  */
 
 export type ReportStatus = "draft" | "submitted" | "approved" | "returned";
@@ -25,9 +25,9 @@ export interface StoredReport {
   status: ReportStatus;
 }
 
-export const REPORT_KEY = "crowe-compass:report:capital-planning";
-export const NOTES_KEY = "crowe-compass:report:capital-planning:return-notes";
-export const ROLE_KEY = "crowe-compass-reporting:role";
+export const REPORT_KEY = "crowe-helix:report:capital-planning";
+export const NOTES_KEY = "crowe-helix:report:capital-planning:return-notes";
+export const ROLE_KEY = "crowe-helix-reporting:role";
 
 const isBrowser = () => typeof window !== "undefined";
 

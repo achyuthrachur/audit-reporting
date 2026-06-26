@@ -1,8 +1,8 @@
-# PRD - Crowe Compass: AI Audit Reporting Agent
+# PRD - Crowe Helix: AI Audit Reporting Agent
 
 ## Purpose
 
-Create a Crowe Compass demo that drafts a final internal audit report for Meridian National Bank's FY2026 Capital Planning & Capital Adequacy audit.
+Create a Crowe Helix demo that drafts a final internal audit report for Meridian National Bank's FY2026 Capital Planning & Capital Adequacy audit.
 
 ## Workflow
 

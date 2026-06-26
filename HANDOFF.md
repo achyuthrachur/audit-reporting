@@ -1,12 +1,12 @@
-# HANDOFF - Crowe Compass Audit Reporting Agent
+# HANDOFF - Crowe Helix Audit Reporting Agent
 
 ## Status
 
-This project is the Audit Reporting fork of the original Crowe Compass audit-planning demo. It is intended to live in a separate GitHub repo and Vercel project named `audit-reporting`.
+This project is the Audit Reporting fork of the original audit-planning demo. It is intended to live in a separate GitHub repo and Vercel project named `audit-reporting`.
 
 ## Current app
 
-Next.js demo: **Crowe Compass - AI Audit Reporting Agent** for **Meridian National Bank** ($280B). The app reads 8 synthetic reporting-phase knowledge-base documents and drafts the FY2026 Capital Planning & Capital Adequacy final audit report through 7 sequential live `gpt-5.5` calls over SSE, with safe-mode fallback.
+Next.js demo: **Crowe Helix - AI Audit Reporting Agent** for **Meridian National Bank** ($280B). The app reads 8 synthetic reporting-phase knowledge-base documents and drafts the FY2026 Capital Planning & Capital Adequacy final audit report through 7 sequential live `gpt-5.5` calls over SSE, with safe-mode fallback.
 
 ## Reporting workflow
 
@@ -30,16 +30,16 @@ Director role:
 - Knowledge base: `src/content/documents/index.ts`
 - Fallback report: `src/content/fallbackReport.ts`
 - Persistence keys:
-  - `crowe-compass:report:capital-planning`
-  - `crowe-compass:report:capital-planning:return-notes`
-  - `crowe-compass-reporting:role`
+  - `crowe-helix:report:capital-planning`
+  - `crowe-helix:report:capital-planning:return-notes`
+  - `crowe-helix-reporting:role`
 
 ## Environment
 
 ```bash
 OPENAI_API_KEY=
 OPENAI_MODEL=gpt-5.5
-NEXT_PUBLIC_APP_NAME=Crowe Compass
+NEXT_PUBLIC_APP_NAME=Crowe Helix
 DEMO_FALLBACK=false
 ```
 
